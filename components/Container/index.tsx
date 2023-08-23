@@ -46,7 +46,7 @@ export const Container = ({ children }) => {
                 onClick={onClick}
                 sx={{
                     height: isDesktopMode ? '100%' : 'auto',
-                    paddingTop: isDesktopMode ? '70px' : '0',
+                    // paddingTop: isDesktopMode ? '70px' : '0',
                 }}
             >
                 <Box

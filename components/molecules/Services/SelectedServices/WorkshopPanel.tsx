@@ -41,7 +41,7 @@ export const WorkshopPanel = () => {
                 await loadDatesAndTimes(cart!, store?.location!, new Date())
                 await setStep(Step.ChooseDate)
             } else {
-                await setStep(Step.PersonalInfo)
+                // await setStep(Step.PersonalInfo)
             }
         } finally {
             layout.setIsShowLoader(false)
@@ -50,7 +50,7 @@ export const WorkshopPanel = () => {
 
     useEffect(() => {
         if (selectedServicesStateValue.length === 0) {
-            setStep(Step.SelectService).finally() //noop
+            setStep(Step.ChooseDate).finally() //noop
             return
         }
         // eslint-disable-next-line

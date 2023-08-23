@@ -8,5 +8,5 @@ interface Props {
 
 export const ServiceAvailableBookableItem = ({ bookableItem }: Props) => {
     const durationText = getDurationText(bookableItem)
-    return <Caption name={bookableItem.name} durationText={durationText} useBold={true}/>
+    return <Caption name={bookableItem.name} durationText={durationText} useBold={false}/>
 }

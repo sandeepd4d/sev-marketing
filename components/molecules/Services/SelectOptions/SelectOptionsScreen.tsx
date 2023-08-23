@@ -12,7 +12,7 @@ export const SelectOptionsScreen = () => {
     const { setStep } = useFlowStep()
     const { isMobile } = useMobile()
     const onRightPanelBtnClick = async () => {
-        await setStep(Step.SelectedServices)
+        await setStep(Step.ChooseDate)
     }
     const activeSelectedService = useActiveSelectedService()
     const hasSelectedOptions = activeSelectedService?.selectedOptions && activeSelectedService?.selectedOptions?.length > 0

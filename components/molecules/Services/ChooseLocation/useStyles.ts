@@ -47,7 +47,7 @@ export const useStoreListStyles = makeStyles((theme: Theme) => ({
         height: (props: StylesProps) =>
             props.isMobile
                 ? props.isLocationAccessAnsweredByUser
-                    ? 'auto'
+                    ? '100%'
                     : 'calc(100% - 411px)'
                 : '100%',
         '&::-webkit-scrollbar': {

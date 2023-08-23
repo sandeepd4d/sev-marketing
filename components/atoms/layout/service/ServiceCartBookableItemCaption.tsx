@@ -5,7 +5,7 @@ import { useCartMethods } from 'lib/state/cart'
 
 interface Props {
     bookableItem: CartBookableItem
-    useBold: boolean
+    useBold?: boolean
 }
 
 export const ServiceCartBookableItemCaption = ({ bookableItem, useBold }: Props) => {

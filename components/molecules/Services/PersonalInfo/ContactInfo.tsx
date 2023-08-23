@@ -4,10 +4,10 @@ import EmailPhone from 'components/molecules/Services/PersonalInfo/EmailPhone'
 
 export default function ContactInfo() {
     return (
-        <Box sx={{ pt: 5 }}>
-            <Typography variant="h3" sx={{ pb: 1 }}>
+        <Box>
+            {/* <Typography variant="h3" sx={{ pb: 1 }}>
                 Contact info
-            </Typography>
+            </Typography> */}
             <EmailPhone />
         </Box>
     )

@@ -12,4 +12,10 @@ module.exports = withTM({
             GOOGLE_ANALYTICS_KEY: process.env.GOOGLE_ANALYTICS_KEY_DEVELOPMENT,
             NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY_DEVELOPMENT,
         },
+        reactStrictMode: true,
+        output: 'export',
+        distDir: '_static',
+        images: {
+          unoptimized: true
+        }
 })

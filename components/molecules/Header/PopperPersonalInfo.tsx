@@ -14,7 +14,7 @@ export const PopperPersonalInfo = ({handleClose}: Props) => {
 
     return (
         <PopperItemBase handleClose={handleClose}
-                        step={Step.PersonalInfo}
+                        step={Step.ChooseDate}
                         text={isSet ? `${personalInformation.firstName} ${personalInformation.lastName}` : 'Pending'}
                         icon={<User/>}
                         editable={isSet}

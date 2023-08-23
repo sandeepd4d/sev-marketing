@@ -14,12 +14,13 @@ export const StaffError = ({ staff }: Props) => {
     const { currentFlowStep } = useFlowStep()
     return (
         <>
-            {!staff &&
+            {
+            !staff &&
                 allowChooseStaffError &&
                 currentFlowStep.step !== Step.SelectOptions && (
                     <Box className={classes.staffError}>
                         <Box className={classes.staffErrorIconInline}>!</Box>
-                        <Box component="span">
+                        <Box component="span" className={classes.staffErrorMessage}>
                             Choose a staff member to continue
                         </Box>
                     </Box>

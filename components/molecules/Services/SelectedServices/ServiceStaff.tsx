@@ -22,13 +22,13 @@ export const ServiceStaff = ({ bookableItem }: Props) => {
         <>
             {staff && staff.avatar && (
                 <Box className={classes.staffSelected}>
-                    <Typography>with {staff.name}</Typography>
+                    with {staff.name}
                     <SelectedTime />
                 </Box>
             )}
             {staff && !staff.id && (
                 <Box className={classes.staffSelected}>
-                    <Typography>with first available</Typography>
+                    with first available
                     <SelectedTime />
                 </Box>
             )}

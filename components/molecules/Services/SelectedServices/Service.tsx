@@ -1,5 +1,6 @@
 import { CartBookableItem } from '@boulevard/blvd-book-sdk/lib/cart'
-import { Button } from '@mui/material'
+import { theme } from 'styles/theme'
+import { Button, IconButton } from '@mui/material'
 import { Step } from 'lib/state/booking-flow/types'
 import { useFlowStep } from 'lib/state/booking-flow'
 import {
@@ -9,13 +10,20 @@ import {
 } from 'lib/state/services'
 import { useServiceStyles } from 'components/molecules/Services/SelectedServices/useStyles'
 import { WithService } from 'components/molecules/Services/SelectedServices/WithService'
+import DeleteIcon from '@mui/icons-material/Delete';
+
+// import { StaffsList } from '../ChooseStaff/StaffsList'
 
 interface Props {
     bookableItem: CartBookableItem
     handleServiceChange?: (bookableItem: CartBookableItem) => void
+    active?:boolean
+    isClicked?:()=>void
+    clicked?:number|undefined
+    index?:number,
 }
 
-export const Service = ({ bookableItem, handleServiceChange }: Props) => {
+export const Service = ({ bookableItem, handleServiceChange, clicked, active, index, isClicked}: Props) => {
     const activeSelectedService = useActiveSelectedService()
     const setActiveSelectedService = useSetActiveSelectedService()
     const classes = useServiceStyles()
@@ -42,31 +50,29 @@ export const Service = ({ bookableItem, handleServiceChange }: Props) => {
     }
 
     const selected = activeSelectedService?.id === bookableItem.id
-
+    // console.log(activeSelectedService, 'activeSelectedService')
     return (
-        <WithService
-            bookableItem={bookableItem}
-            selected={selected}
-            handleChange={handleChange}
-            isReadMode={true}
-            addRightArrow={true}
-        >
-            {hasAddons && currentFlowStep.step !== Step.SelectOptions && (
-                <Button
-                    variant="contained"
-                    className={classes.editAddOn}
-                    onClick={onEditAddonClick}
-                >
-                    Edit add-ons
-                </Button>
-            )}
-            <Button
-                variant="contained"
-                className={classes.removeBtn}
-                onClick={onRemoveInternal}
+        <>
+            <WithService
+                bookableItem={bookableItem}
+                selected={selected}
+                handleChange={handleChange}
+                isReadMode={true}
+                // addRightArrow={true}
+                clicked={clicked}
+                active={active}
+                index={index}
+                isClickedAgain={isClicked}
             >
-                Remove
-            </Button>
-        </WithService>
+                {/* {
+                    hasAddons && currentFlowStep.step !== Step.SelectOptions && (
+                        <Button variant="contained" className={classes.editAddOn} onClick={onEditAddonClick}>Edit add-ons</Button>
+                    )
+                } */}
+                {/* <IconButton aria-label="delete" className={classes.removeBtn} onClick={onRemoveInternal} style={{color:theme.palette.custom.colorTwo}}>
+                  <DeleteIcon />
+                </IconButton> */}
+            </WithService>
+        </>
     )
 }

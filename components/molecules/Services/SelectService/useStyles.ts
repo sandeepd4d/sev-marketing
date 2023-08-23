@@ -14,12 +14,12 @@ export const useServicesListStyles = makeStyles(() => ({
 
 export const useCategoriesListStyles = makeStyles(() => ({
     root: {
-        overflowY: 'scroll',
-        position: 'sticky',
-        height: 'calc(100% - 113px)',
-        '&::-webkit-scrollbar': {
-            display: 'none',
-        },
+        // overflowY: 'scroll',
+        // position: 'sticky',
+        // height: 'calc(100% - 113px)',
+        // '&::-webkit-scrollbar': {
+        //     display: 'none',
+        // },
     },
 }))
 
@@ -32,7 +32,9 @@ export const useSelectServiceScreenStyles = makeStyles(() => ({
         width: '100%',
     },
     listWrapper: {
-        height: 'calc(100% - 55px)',
+        height: '100%',
+        overflowY: 'auto',
+        paddingBottom: '90px'
     },
     topWrapper: {
         display: 'flex',
@@ -54,13 +56,10 @@ export const useSelectServiceScreenStyles = makeStyles(() => ({
 
 export const useServiceStyles = makeStyles(() => ({
     cardItemPrice: {
-        display: 'inline-block',
-        textTransform: 'lowercase',
         fontSize: '14px',
-        fontWeight: 'bold',
-        '&:first-letter': {
-            textTransform: 'uppercase',
-        },
+        lineHeight:' 20px',
+        display: 'block',
+        marginTop:'10px',
     },
 
     cardItemDescBlock: {

@@ -24,7 +24,7 @@ export const Service = ({ bookableItem }: Props) => {
             key={bookableItem.id}
             icon={<DatePickerIcon />}
             isEditable={true}
-            step={Step.SelectedServices}
+            step={Step.ChooseDate}
             textHtml={
                 <Box
                     sx={{

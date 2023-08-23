@@ -62,9 +62,9 @@ export const Option = ({ option, bookableItem }: Props) => {
                     priceStr={PriceLabel(option.priceDelta)}
                 />
             }
-            onSelectClick={addOption}
+            // onSelectClick={addOption}
             btnName="Select"
-            btnWidth={80}
+            // btnWidth={80}
             description={option.description}
             buttonComponent={
                 selected && <SelectedButton removeOption={removeOption} />

@@ -24,16 +24,16 @@ export default function YourInfoForm() {
 
     return (
         <Box sx={{
-            padding: !isMobile ? 5 : theme.spacing(3, 4, 10, 5),
-            height: 'calc(100% - 57px)',
-            overflowY: 'scroll',
-            position: 'sticky',
-            '&::-webkit-scrollbar': {
-                display: 'none',
-            },
+            // padding: !isMobile ? theme.spacing(3, 2) : theme.spacing(3, 4, 10, 5),
+            // height: 'calc(100% - 57px)',
+            // overflowY: 'scroll',
+            // position: 'sticky',
+            // '&::-webkit-scrollbar': {
+            //     display: 'none',
+            // },
         }}>
             <BasicInfo />
-            <ContactInfo />
+            {/* <ContactInfo /> */}
             {!!cartState?.bookingQuestions.length && <AdditionalInfo />}
         </Box>
     )

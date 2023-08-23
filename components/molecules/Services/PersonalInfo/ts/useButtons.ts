@@ -86,12 +86,12 @@ export const useButtons = () => {
                 }
             }
 
-            await setPersonalInformation({
-                email: getFieldOrUndefined(values?.email)!,
-                firstName: getFieldOrUndefined(values?.firstName)!,
-                lastName: getFieldOrUndefined(values?.lastName)!,
-                phone: values.phone,
-            })
+            // await setPersonalInformation({
+            //     email: getFieldOrUndefined(values?.email)!,
+            //     firstName: getFieldOrUndefined(values?.firstName)!,
+            //     lastName: getFieldOrUndefined(values?.lastName)!,
+            //     phone: values.phone,
+            // })
             setErrorMessageType(ErrorType.NoError)
             await setStep(Step.PayAndConfirm)
         } catch {

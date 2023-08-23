@@ -8,16 +8,29 @@ import { useCartState } from 'lib/state/cart'
 import { useCartStoreState } from 'lib/state/store'
 import { useStaffDates } from 'lib/state/staffDate'
 import { CartBookableDate } from '@boulevard/blvd-book-sdk/lib/cart'
+import Calendar from 'lib/Calendar';
 
 const useStyles = makeStyles((theme: Theme) => ({
+    calendarWrap:{
+        padding: '20px',
+        height: '100%',
+        boxShadow:
+            '0px 10px 15px 0px rgba(0, 0, 0, 0.2)',
+    },
     dayPickerWrapper: {
         backgroundColor: '#ffffff',
-        boxShadow:
-            '0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12)',
         borderRadius: '4px',
-        width: '310px',
+        width: '85%',
         height: '323px',
-        padding: theme.spacing(3, 1, 1, 1),
+        margin: 'auto',
+        position: 'absolute',
+        zIndex: 9,
+        left: 0,
+        right: 0,
+        display:'none',
+        '&.calendar-open':{
+            display:'block'
+        }
     },
     calendarDayPicker: {
         width: '100%',
@@ -72,13 +85,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     today: {
         color: '#33343C !important',
-        textDecoration: 'underline !important',
-        textUnderlineOffset: '2px !important',
-        textDecorationThickness: '2px !important',
-        fontWeight: 'bold!important' as any,
+        // textDecoration: 'underline !important',
+        // textUnderlineOffset: '2px !important',
+        // textDecorationThickness: '2px !important',
+        // fontWeight: 'bold!important' as any,
     },
     selected: {
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.custom.colorOne,
         borderRadius: '50%',
         color: `${theme.palette.primary.contrastText} !important`,
     },
@@ -96,17 +109,25 @@ interface Props {
 export const SelectDate = ({ onDayClick, filteredDate }: Props) => {
     const classes = useStyles()
     const fromMonth = new Date()
+    const [openCalendar, setOpenCalendar] = useState(false);
+    // const [selectedDate, setSelectedDate] = useState(new Date());
     fromMonth.setHours(0, 0, 0, 0)
 
+    const [data, setData] = useState(new Date());
+    const [showDetails, setShowDetails] = useState(false);
     const cartState = useCartState()
     const cartStoreState = useCartStoreState()
-    const [displayedMonth, setDisplayedMonth] = useState(
-        filteredDate ?? new Date()
-    )
+    const [displayedMonth, setDisplayedMonth] = useState(filteredDate ?? new Date())
     const { loadStaffDates, getStaffDateState } = useStaffDates()
     const staffDatesStore = getStaffDateState()
     const weekdaysShort = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
     const [refresher, setRefresher] = useState(0)
+
+    const showDetailsHandle = (dayStr) => {
+        setData(dayStr);
+        setShowDetails(true);
+    };
+
     const onMonthChange = async (date: Date) => {
         setDisplayedMonth(date)
         await loadStaffDates(
@@ -132,21 +153,23 @@ export const SelectDate = ({ onDayClick, filteredDate }: Props) => {
     }
 
     const handleDayClick = async (day, modifiers: DayModifiers) => {
+        setData(day);
         if (modifiers.disabled) {
             return
         }
         const daysInMonth = getAllowedDaysInMonth(day)
         const selectedDays = daysInMonth.filter(
             (x) =>
-                x.date.getUTCDate() === day.getUTCDate() &&
-                x.date.getUTCMonth() === day.getUTCMonth() &&
-                x.date.getUTCFullYear() == day.getUTCFullYear()
-        )
-        if (selectedDays.length === 0) {
-            return
-        }
-
+            x.date.getUTCDate() === day.getUTCDate() &&
+            x.date.getUTCMonth() === day.getUTCMonth() &&
+            x.date.getUTCFullYear() == day.getUTCFullYear()
+            )
+            if (selectedDays.length === 0) {
+                return
+            }
+            
         onDayClick(day, selectedDays[0].cartBookableDate)
+        setOpenCalendar(false)
     }
 
     const isDisabled = (day: Date) => {
@@ -184,19 +207,27 @@ export const SelectDate = ({ onDayClick, filteredDate }: Props) => {
             </div>
         )
     }
+
+    
+
     return (
-        <Box className={classes.dayPickerWrapper}>
-            <DayPicker
-                month={displayedMonth}
-                className={classes.calendarDayPicker}
-                fromMonth={new Date()}
-                selectedDays={filteredDate}
-                weekdaysShort={weekdaysShort}
-                disabledDays={isDisabled}
-                onMonthChange={onMonthChange}
-                onDayClick={handleDayClick}
-                renderDay={renderDay}
-            />
+        <Box>
+            <Calendar setOpenCalendar={setOpenCalendar} openCalendar={openCalendar} showDetailsHandle={showDetailsHandle} handleDayClick={handleDayClick} currentDate={data} isDisabled={isDisabled} />
+            <Box className={`${classes.dayPickerWrapper} ${openCalendar && 'calendar-open'}`}>
+                <Box className={classes.calendarWrap}>
+                    <DayPicker
+                        month={displayedMonth}
+                        className={classes.calendarDayPicker}
+                        fromMonth={new Date()}
+                        selectedDays={filteredDate}
+                        weekdaysShort={weekdaysShort}
+                        disabledDays={isDisabled}
+                        onMonthChange={onMonthChange}
+                        onDayClick={handleDayClick}
+                        renderDay={renderDay}
+                        />
+                </Box>
+            </Box>
         </Box>
     )
 }

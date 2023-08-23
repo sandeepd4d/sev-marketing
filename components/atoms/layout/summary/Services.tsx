@@ -19,7 +19,7 @@ export const Services = () => {
 
     if (
         currentFlowStep.step !== Step.ChooseDate &&
-        currentFlowStep.step !== Step.PersonalInfo &&
+        // currentFlowStep.step !== Step.PersonalInfo &&
         currentFlowStep.step !== Step.PayAndConfirm
     ) {
         return <></>
@@ -33,7 +33,7 @@ export const Services = () => {
                 <SummaryItemBase
                     key={bookableItem.id}
                     padding={theme.spacing(0)}
-                    step={Step.SelectedServices}
+                    step={Step.ChooseDate}
                     onEdit={() => onEdit(bookableItem)}
                     isEditable={true}
                 >

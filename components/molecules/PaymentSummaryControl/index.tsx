@@ -24,12 +24,9 @@ export const PaymentSummaryControl = ({isTopSummaryMode, onServiceNameClick}: Pr
     const hasServices = selectedServicesStateValue.length > 0
     return (
         <>
-            <Box className={classes.servicesBlock} sx={{borderBottom: isTopSummaryMode ? 'none' : '1px solid #C4C4C4'}}>
+            <Box className={classes.servicesBlock} sx={{borderBottom: isTopSummaryMode ? 'none' : '1px solid #9E9E9E'}}>
                 {reversedList.map((bookableItem) => (
-                    <Box
-                        key={bookableItem.id}
-                        className={classes.boxWrapperCommon}
-                    >
+                    <Box key={bookableItem.id} className={classes.boxWrapperCommon}>
                         <Box>
                             <Typography
                                 sx={{ pr: 2 }}

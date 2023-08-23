@@ -5,14 +5,17 @@ import { Step } from 'lib/state/booking-flow/types'
 import { PopperItemBase } from 'components/molecules/Header/PopperItemBase'
 
 interface Props {
-    handleClose: () => void
+    handleClose?: () => void,
+    textType?:string
 }
 
-export const PopperLocation = ({handleClose}: Props) => {
+export const PopperLocation = ({handleClose, textType}: Props) => {
     const selectedStore = useCartStoreState()
 
     return (
-        <PopperItemBase handleClose={handleClose}
+        <PopperItemBase 
+        textType={textType}
+        handleClose={handleClose}
                         step={Step.ChooseLocation}
                         text={selectedStore ? getLocationName(selectedStore) : 'Pending'}
                         icon={<LocationPin/>}

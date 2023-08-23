@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
                             className="background-container"
                             style={{ flex: 1 }}
                         >
-                            <Header />
+                            {/* <Header /> */}
                             {/* <MobileSummary /> */}
                             <Component {...pageProps} />
                         </div>

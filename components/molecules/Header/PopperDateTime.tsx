@@ -6,23 +6,26 @@ import { useCartState } from 'lib/state/cart'
 import { PopperItemBase } from 'components/molecules/Header/PopperItemBase'
 
 interface Props {
-    handleClose: () => void
+    handleClose?: () => void
+    textType?:string
 }
 
-export const PopperDateTime = ({handleClose}: Props) => {
+export const PopperDateTime = ({handleClose, textType}: Props) => {
     const selectedStore = useCartStoreState()
     const cart = useCartState()
 
     return (
-        <PopperItemBase handleClose={handleClose}
-                        step={Step.ChooseDate}
-                        text={cart?.startTime ? formatDateFns(
-                                             cartTimeToDate(cart?.startTime),
-                                             selectedStore?.location.tz,
-                                             "EEEE, MMM d @ h:mmaaaaa'm'"
-                                         ) : 'Pending'}
-                        icon={<CalendarDark/>}
-                        editable={!!cart?.startTime}
+        <PopperItemBase 
+            handleClose={handleClose}
+            textType={textType}
+            step={Step.ChooseDate}
+            text={cart?.startTime ? formatDateFns(
+                                    cartTimeToDate(cart?.startTime),
+                                    selectedStore?.location.tz,
+                                    "EEEE, MMM d yyyy"
+                                ) : 'Pending'}
+            icon={<CalendarDark/>}
+            editable={!!cart?.startTime}
         />
     )
 }

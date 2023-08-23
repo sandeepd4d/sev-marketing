@@ -1,4 +1,6 @@
 import { Box } from '@mui/material'
+import { useMobile } from 'lib/utils/useMobile'
+import { useWithLayoutStyles } from 'components/atoms/layout/useWithLayoutStyles';
 
 interface Props {
     priceStr: string
@@ -6,8 +8,10 @@ interface Props {
 }
 
 export const Price = ({ priceStr, classesCardItemPrice }: Props) => {
+    const { isMobile } = useMobile()
+    const accordionStyle = useWithLayoutStyles({ isMobile })
     return (
-        <Box component="span" className={classesCardItemPrice}>
+        <Box component="span" className={accordionStyle.priceItemCard}>
             {priceStr}
         </Box>
     )

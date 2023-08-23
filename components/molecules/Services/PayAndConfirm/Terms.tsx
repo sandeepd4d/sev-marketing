@@ -11,11 +11,11 @@ export default function Terms() {
     const hasServices = selectedServicesStateValue.filter(x=>isCartAvailableBookableItem(x.item)).length > 0
     const bookingOrPurchasingText = hasServices ? 'By booking this appointment' : 'By purchasing this product'
     return (
-        <Grid item lg={4} md={10} sm={10} xs={12} sx={{ pt: 4 }}>
-            <Typography variant="h3" sx={{ pb: 1 }}>
+        <Grid item xs={12}>
+            <Typography sx={{ fontWeight:600, mt:7 }}>
                 Terms
             </Typography>
-            <Typography sx={{ pb: 1, '& a': {color: '#33343C', fontSize: 14} }}>
+            <Typography sx={{ pt: 4, '& a': {color: '#33343C', fontSize: 14} }}>
                 {bookingOrPurchasingText + ', you agree to LOGO’s'} <a target="_blank" rel="noreferrer" href={cancellationPolicyURL}>Cancellation
                 Policy</a> as well as Boulevard’s <a target="_blank" rel="noreferrer" href={termsOfServiceURL}>Terms Of Service</a>.
             </Typography>

@@ -10,16 +10,20 @@ export const useHeader = () => {
         if (currentFlowStep.step === Step.SelectService || currentFlowStep.step === Step.SelectOptions) {
             currentStep = 1
             currentStepByPercent = 17
-        } else if (currentFlowStep.step === Step.SelectedServices) {
-            currentStep = 2
-            currentStepByPercent = 34
-        } else if (currentFlowStep.step === Step.ChooseDate) {
+        } 
+        // else if (currentFlowStep.step === Step.SelectedServices) {
+        //     currentStep = 2
+        //     currentStepByPercent = 34
+        // }
+         else if (currentFlowStep.step === Step.ChooseDate) {
             currentStep = 3
             currentStepByPercent = 50
-        } else if (currentFlowStep.step === Step.PersonalInfo) {
-            currentStep = 4
-            currentStepByPercent = 67
-        } else if (currentFlowStep.step === Step.PayAndConfirm) {
+        }
+        //  else if (currentFlowStep.step === Step.PersonalInfo) {
+        //     currentStep = 4
+        //     currentStepByPercent = 67
+        // }
+         else if (currentFlowStep.step === Step.PayAndConfirm) {
             currentStep = 5
             currentStepByPercent = 84
         } else if (currentFlowStep.step === Step.BookingSuccess) {

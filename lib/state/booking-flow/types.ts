@@ -3,9 +3,10 @@ export enum Step {
     ChooseLocation,
     SelectService,
     SelectOptions,
-    SelectedServices,
+    // SelectedServices,
     ChooseDate,
-    PersonalInfo,
+    ConsentForm,
+    // PersonalInfo,
     PayAndConfirm,
     BookingSuccess,
 }

@@ -12,11 +12,8 @@ import { WorkshopPanel } from 'components/molecules/Services/SelectService/Works
 export const SelectServiceScreen = () => {
     const [searchString, setSearchString] = useState('')
     const initialAvailableCategories = useAvailableCategories()
-    const [availableCategories, setAvailableCategories] = useState(
-        initialAvailableCategories
-    )
-    const setSelectedCartAvailableCategory =
-        useSetSelectedCartAvailableCategory()
+    const [availableCategories, setAvailableCategories] = useState(initialAvailableCategories)
+    const setSelectedCartAvailableCategory = useSetSelectedCartAvailableCategory()
     const selectedCartAvailableCategory = useSelectedCartAvailableCategory()
 
     const onSearchChange = (event) => {
@@ -48,6 +45,8 @@ export const SelectServiceScreen = () => {
     return (
         <WithLayout
             isShowLoader={false}
+            // rightPanelBtnCaption="Continue"
+            // showBottom={true}
             leftPanel={
                 <LeftPanel
                     availableCategories={availableCategories}
@@ -56,7 +55,7 @@ export const SelectServiceScreen = () => {
                     clear={clear}
                 />
             }
-            rightPanel={<ServicesList searchString={searchString} />}
+            // rightPanel={<ServicesList searchString={searchString} />}
             workshopPanel={<WorkshopPanel />}
         />
     )

@@ -287,12 +287,12 @@ export const useCartMethods = () => {
         const cart = await Blvd.carts.create(location)
         setCartIdState(cart.id)
         setBookingAnswers([])
-        setPersonalInformationState({
-            firstName: '',
-            email: '',
-            lastName: '',
-            phone: '',
-        })
+        // setPersonalInformationState({
+        //     firstName: '',
+        //     email: '',
+        //     lastName: '',
+        //     phone: '',
+        // })
         resetStaffDatesStore()
         resetStaffTimesState()
         await setCartCommonState(cart, location, store)
@@ -355,14 +355,14 @@ export const useCartMethods = () => {
         }
     }
 
-    const getPersonalInformation = (cart: Cart): PersonalInformation => {
-        return {
-            email: cart.clientInformation?.email ?? '',
-            phone: cart.clientInformation?.phoneNumber.substring(2) ?? '',
-            firstName: cart.clientInformation?.firstName ?? '',
-            lastName: cart.clientInformation?.lastName ?? '',
-        }
-    }
+    // const getPersonalInformation = (cart: Cart): PersonalInformation => {
+    //     return {
+    //         email: cart.clientInformation?.email ?? '',
+    //         phone: cart.clientInformation?.phoneNumber.substring(2) ?? '',
+    //         firstName: cart.clientInformation?.firstName ?? '',
+    //         lastName: cart.clientInformation?.lastName ?? '',
+    //     }
+    // }
 
     const resetCategories = async () => {
         resetSelectedCartAvailableCategory()
@@ -544,7 +544,7 @@ export const useCartMethods = () => {
         setCartCommonState: setCartCommonState,
         getCartDataLoadedState: getCartDataLoadedState,
         reserveBookableTime: reserveBookableTime,
-        getPersonalInformation: getPersonalInformation,
+        // getPersonalInformation: getPersonalInformation,
         loadBookingAnswers: loadBookingAnswers,
         resetCategories: resetCategories,
         addService: addService,

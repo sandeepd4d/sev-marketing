@@ -17,7 +17,8 @@ export const PersonalInfo = () => {
     }
 
     return (
-        <SummaryItemBase isEditable={true} step={Step.PersonalInfo}>
+        // <SummaryItemBase isEditable={true} step={Step.PersonalInfo}>
+        <SummaryItemBase isEditable={true}>
             <Typography variant="body1">
                 {`${personalInformation.firstName} ${personalInformation.lastName}`}
             </Typography>

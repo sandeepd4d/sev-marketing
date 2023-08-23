@@ -13,6 +13,7 @@ const personalInformationState = atom<PersonalInformation>({
         email: '',
         lastName: '',
         phone: '',
+        password:''
     },
 })
 

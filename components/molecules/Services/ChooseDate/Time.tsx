@@ -9,10 +9,18 @@ import { LayoutContext } from 'components/atoms/layout/LayoutContext'
 
 const useStyles = makeStyles(() => ({
     selectTimeBtn: {
-        width: 68,
-        height: 32,
+        width: '18%',
+        height: 38,
         fontWeight: 500,
         textTransform: 'lowercase',
+        fontSize: '14px',
+        color:'#000000',
+        borderRadius:'4px',
+        border: '1px solid #000000',
+        backgroundColor:'transparent',
+        '&:hover':{
+            backgroundColor:'#98877C'
+        }
     },
 }))
 
@@ -36,10 +44,10 @@ export const Time = ({ time, store }: Props) => {
             key={'time' + time.cartBookableTime?.id}
             variant="contained"
             className={classes.selectTimeBtn}
-            sx={{
-                mr: 1,
-                mb: 1,
-            }}
+            // sx={{
+            //     mr: 1,
+            //     mb: 1,
+            // }}
             onClick={onSelectTime}
         >
             {formatDateFns(time.locationTime, store?.location.tz, TimeFormat)}

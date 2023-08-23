@@ -5,6 +5,7 @@ import { useFlowStep } from 'lib/state/booking-flow'
 import { format as formatFn, toDate } from 'date-fns-tz'
 import { useCartStoreState } from 'lib/state/store'
 import { useStaffTimes } from 'lib/state/staffTime'
+import { colors } from 'constants/colors'
 
 export const SelectedTime = () => {
     const { setStep } = useFlowStep()
@@ -27,10 +28,11 @@ export const SelectedTime = () => {
     return (
         <Typography
             onClick={onStepClick}
-            variant="subtitle2"
+            // variant="subtitle2"
             sx={{
-                pl: '3px',
+                // pl: '3px',
                 cursor: 'pointer',
+                color:colors.custom.colorFive,
                 fontWeight: '400'
             }}
         >

@@ -16,13 +16,16 @@ const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'row',
             justifyContent: 'flex-start',
             alignItems: 'center',
-            borderBottom: `1px solid ${theme.palette.custom.lightGray}`,
-            margin: (props: StylesProps) => (!props.isMobile ? 0 : theme.spacing(0, -3)),
-            paddingRight: (props: StylesProps) => (!props.isMobile ? theme.spacing(3) : 0),
+            // borderBottom: `1px solid ${theme.palette.custom.lightGray}`,
+            margin: (props: StylesProps) => 0,
+            paddingLeft: (props: StylesProps) => theme.spacing(5),
+            paddingRight: (props: StylesProps) => theme.spacing(5),
+            paddingTop: (props: StylesProps) => theme.spacing(5),
+            paddingBottom: (props: StylesProps) => theme.spacing(0),
             '&:first-child': {
-                height: (props: StylesProps) => (!props.isMobile ? '57px' : 'auto'),
-                borderBottom: (props: StylesProps) => (!props.isMobile ? '1px solid #C4C4C4' : `1px solid ${theme.palette.custom.lightGray}`),
-                boxShadow: (props: StylesProps) => (!props.isMobile ? '0px 1px 2px rgba(0, 0, 0, 0.25)' : 'none'),
+                // height: (props: StylesProps) => (!props.isMobile ? '57px' : 'auto'),
+                // borderBottom: (props: StylesProps) => (!props.isMobile ? '1px solid #C4C4C4' : `1px solid ${theme.palette.custom.lightGray}`),
+                // boxShadow: (props: StylesProps) => (!props.isMobile ? '0px 1px 2px rgba(0, 0, 0, 0.25)' : 'none'),
             },
         },
         editButton: {
@@ -69,13 +72,13 @@ export const SummaryItemBase = ({
     return (
         <Box
             className={classes.infoBlock}
-            sx={{
-                padding: padding ?? 2,
-                paddingRight: !isMobile ? 0 : 2,
-            }}
+            // sx={{
+            //     padding: padding ?? 2,
+            //     paddingRight: !isMobile ? 0 : 2,
+            // }}
         >
             {children}
-            {isEditable && (
+            {/* {isEditable && (
                 <Typography
                     className={classes.editButton}
                     variant="subtitle2"
@@ -83,7 +86,7 @@ export const SummaryItemBase = ({
                 >
                     Edit
                 </Typography>
-            )}
+            )} */}
         </Box>
     )
 }

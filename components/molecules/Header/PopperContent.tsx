@@ -21,7 +21,7 @@ export const PopperContent = ({handleClose}: Props) => {
     const onServiceNameClick = async (bookableItem) => {
         setActiveSelectedService(bookableItem)
         handleClose()
-        await setStep(Step.SelectedServices)
+        // await setStep(Step.SelectedServices)
     }
 
     return (

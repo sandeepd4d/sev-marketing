@@ -13,13 +13,13 @@ interface StylesProps {
 export const useStyles = makeStyles((theme: Theme) => ({
     summaryBlock: {
         width: '100%',
-        maxWidth: (props: StylesProps) => (!props.isMobile ? '458px' : '100%'),
+        // maxWidth: (props: StylesProps) => (!props.isMobile ? '458px' : '100%'),
         background: 'rgba(255, 255, 255, 0.05)',
-        padding: (props: StylesProps) => (!props.isMobile ? theme.spacing(3) : 0),
-        marginLeft: (props: StylesProps) => (!props.isMobile ? theme.spacing(-3) : 0),
-        border: (props: StylesProps) => (!props.isMobile ? '1px solid #C4C4C4' : 'none'),
+        padding: theme.spacing(3, 5),
+        // marginLeft: (props: StylesProps) => (!props.isMobile ? theme.spacing(-3) : 0),
+        border:'1px solid #9E9E9E',
         borderRadius: '8px',
-        boxShadow: (props: StylesProps) => (!props.isMobile ? '4px 4px 4px rgba(0, 0, 0, 0.1)' : 'none'),
+        // boxShadow: (props: StylesProps) => (!props.isMobile ? '4px 4px 4px rgba(0, 0, 0, 0.1)' : 'none'),
         '& .MuiTypography-root': {
             fontWeight: 500,
         },
@@ -35,9 +35,10 @@ export default function PaymentSummary() {
     const hasProducts = selectedServicesStateValue.filter(x=>isCartAvailablePurchasableItem(x.item)).length > 0
     const appointmentOrderText = hasProducts ? 'Order' : 'Appointment'
     return (
-        <Box sx={{ pt: isMobile ? 5 : 0, pb: 5 }}>
-            <Typography variant="h3" sx={{ pb: 3 }}>
-                {`${appointmentOrderText} summary for ${personalInformation.firstName} ${personalInformation.lastName}`}
+        <Box>
+            <Typography sx={{ fontWeight:500, pb:1, mt:3 }}>
+                {'Checkout Information'}
+                {/* {`${appointmentOrderText} summary for ${personalInformation.firstName} ${personalInformation.lastName}`} */}
             </Typography>
             <Box className={classes.summaryBlock}>
                 <PaymentSummaryControl isTopSummaryMode={false}/>

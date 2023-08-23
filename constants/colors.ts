@@ -19,6 +19,13 @@ export const colors = {
     },
     custom: {
         [Colors.lightGray]: '#D9DDE5',
+        [Colors.colorOne]:"#A69788",
+        [Colors.colorTwo]:"#C8BEB8",
+        [Colors.colorThree]:"#856E5C",
+        [Colors.colorFour]:"#F5F34E",
+        [Colors.colorFive]:"#52433D",
+        [Colors.colorSix]:"#BAAEA2",
+        [Colors.colorSeven]:"#918074"
     },
     dropDown: {
         borderColor: '#33343C',

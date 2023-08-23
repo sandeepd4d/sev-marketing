@@ -28,7 +28,11 @@ export const Staff = ({ staff }: Props) => {
     const { isMobile } = useMobile()
     const classes = useStaffStyles()
     const activeSelectedService = useActiveSelectedService()
+    // console.log(activeSelectedService, 'activeSelectedService');
+
     const setCartBookableItemListStaff = useSetCartBookableItemListStaff()
+    // console.log(setCartBookableItemListStaff, 'setCartBookableItemListStaff')
+
     const { selectStaff, isCartAvailableBookableItem } = useCartMethods()
     const cart = useCartState()
     const cartBookableItemListStaff = useCartBookableItemListStaff()
@@ -83,50 +87,19 @@ export const Staff = ({ staff }: Props) => {
     const isSelectedStaffState = selectedStaff?.id === staff.id
 
     return (
-        <LayoutListItem
-            useDefaultCursor={true}
-            sx={{
-                paddingTop: '19px!important',
-                paddingBottom: '16px!important',
-                paddingLeft: '24px!important',
-            }}
-        >
+        <LayoutListItem useDefaultCursor={true}>
             <Box className={classes.row}>
-                {staff.avatar && (
-                    <Box
-                        className={clsx(classes.staffBoxAvatar)}
-                        sx={{ backgroundImage: `url(${staff.avatar})` }}
-                    />
-                )}
-                {!staff.avatar && !staff.id && (
-                    <Box
-                        className={clsx(
-                            classes.staffBoxAvatar,
-                            classes.staffBoxAvatarEmpty
-                        )}
-                    >
-                        N
-                    </Box>
-                )}
+                {staff.avatar && (<Box className={clsx(classes.staffBoxAvatar)} sx={{ backgroundImage: `url(${staff.avatar})` }} />)}
+                
+                {!staff.avatar && !staff.id && (<Box className={clsx(classes.staffBoxAvatar,classes.staffBoxAvatarEmpty)}>N</Box>)}
+                
                 <Box className={classes.staffTextBlock}>
-                    <Box
-                        className={clsx(
-                            classes.staffTextItem,
-                            classes.staffName
-                        )}
-                    >
-                        {staff.name}
-                    </Box>
-                    {staff.id && (
-                        <Box className={classes.staffTextItem}>
-                            {staff.name}
-                        </Box>
-                    )}
+                    <Box className={clsx(classes.staffName)}>{staff.name}</Box>
+                    {staff.id && (<Box className={classes.staffDescription}>{staff.name}</Box>)}
                 </Box>
 
                 {!isSelectedStaffState && (
                     <SelectableListBtn
-                        btnWidth={78}
                         btnName="Select"
                         onSelectClick={onSelectClick}
                         btnTop={'0px'}

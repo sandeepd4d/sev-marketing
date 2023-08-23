@@ -9,11 +9,11 @@ export default function PayAndConfirmScreen() {
     return (
         <WithLayout
             isShowLoader={false}
-            leftPanel={<></>}
-            rightPanel={<PaymentAndTerms />}
-            rightPanelCaption="Confirm and pay"
+            leftPanel={<PaymentAndTerms />}
+            // rightPanel={<PaymentAndTerms />}
+            // rightPanelCaption="Confirm and pay"
             addBackArrow={isMobile}
-            backArrowStep={Step.PersonalInfo}
+            backArrowStep={Step.ChooseDate}
         />
     )
 }

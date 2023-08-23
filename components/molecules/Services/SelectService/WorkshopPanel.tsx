@@ -1,10 +1,10 @@
-import { useMobile } from 'lib/utils/useMobile'
 import { useContext, useEffect } from 'react'
-import { LayoutContext } from 'components/atoms/layout/LayoutContext'
+import { useMobile } from 'lib/utils/useMobile'
+import { LayoutContext } from 'components/atoms/layout/LayoutContext';
 
 export const WorkshopPanel = () => {
     const { isMobile } = useMobile()
-    const layout = useContext(LayoutContext)
+    const layout = useContext(LayoutContext);
 
     useEffect(() => {
         layout.setHideLeftPanel(false)

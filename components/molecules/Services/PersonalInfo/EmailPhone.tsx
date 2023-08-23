@@ -18,7 +18,7 @@ export default function EmailPhone() {
 
     return (
         <>
-            <Grid item md={5} sm={12} xs={12}>
+            <Grid item xs={12}>
                 <TextFieldBase
                     id={emailFieldName}
                     label="Email"
@@ -31,7 +31,7 @@ export default function EmailPhone() {
                     }
                 />
             </Grid>
-            <Grid item md={4} sm={12} xs={12}>
+            <Grid item xs={12}>
                 <TextFieldBase
                     id={phoneFieldName}
                     label="Phone"

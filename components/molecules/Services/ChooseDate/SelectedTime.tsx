@@ -15,19 +15,22 @@ export const SelectedTime = ({ store }: Props) => {
     return (
         <Button
             variant="text"
-            color="secondary"
-            startIcon={<Checked color={theme.palette.primary.main} />}
             sx={{
                 width: 'auto',
+                border:`1px solid ${theme.palette.custom.colorFive}`,
+                fontSize:'14px',
+                backgroundColor:theme.palette.custom.colorFive,
+                color:'#ffffff',
                 padding: theme.spacing(0, 2),
-                marginRight: '8px',
-                marginTop: '-3px',
+                '&:hover':{
+                    backgroundColor:theme.palette.custom.colorFive
+                }
             }}
         >
             {formatDateFns(
                 selectedStaffTime?.locationTime,
                 store?.location.tz,
-                'h:mmaaa'
+                'h:mm aaa'
             )}
         </Button>
     )

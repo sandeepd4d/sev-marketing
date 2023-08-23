@@ -23,9 +23,9 @@ export const WorkshopPanel = () => {
     }, [isMobile])
 
     useEffect(() => {
-        if (selectedServicesStateValue.length > 0 && servicesCount === 0) {
-            setStep(Step.SelectedServices).finally() //noop
-        }
+        // if (selectedServicesStateValue.length > 0 && servicesCount === 0) {
+        //     setStep(Step.SelectedServices).finally() //noop
+        // }
         // eslint-disable-next-line
     }, [selectedServicesStateValue])
     return <></>

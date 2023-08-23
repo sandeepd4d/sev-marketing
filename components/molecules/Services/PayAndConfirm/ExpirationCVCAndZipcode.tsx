@@ -30,7 +30,7 @@ export default function ExpirationCVCAndZipcode() {
 
     return (
         <>
-            <Grid item lg={2} md={5} sm={5} xs={6}>
+            <Grid item xs={8}>
                 <TextFieldBase
                     id={expirationDateFieldName}
                     label="Expiration"
@@ -48,7 +48,7 @@ export default function ExpirationCVCAndZipcode() {
                     }
                 />
             </Grid>
-            <Grid item lg={2} md={5} sm={5} xs={6}>
+            <Grid item xs={8}>
                 <TextFieldBase
                     id={cvcFieldName}
                     label="CVC"

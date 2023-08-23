@@ -9,9 +9,9 @@ export default function PersonalInfoScreen() {
     return (
         <WithLayout
             isShowLoader={false}
-            leftPanel={<></>}
-            rightPanel={<YourAndAdditionalInfo />}
-            rightPanelCaption="Your information"
+            leftPanel={<YourAndAdditionalInfo />}
+            // rightPanel={<YourAndAdditionalInfo />}
+            // rightPanelCaption="Your information"
             rightPanelBtnCaption="Continue"
             showBottom={true}
             addBackArrow={isMobile}

@@ -21,30 +21,38 @@ export const useStaffErrorStyles = makeStyles(() => ({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        paddingTop: '20px',
+        paddingTop: '5px',
+        fontSize:'14px',
+        color:'#000000'
     },
     staffErrorIconInline: {
         display: 'inline-block',
         border: '1px solid red',
         color: 'red',
-        width: '25px',
-        height: '25px',
-        lineHeight: '25px',
+        width: '18px',
+        height: '18px',
+        lineHeight: '18px',
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: '16px',
         fontWeight: 'bold',
         borderRadius: '50%',
-        marginRight: '10px',
+        marginRight: '8px',
     },
+    staffErrorMessage:{
+        fontSize: '14px',
+        color:'#FF0000',
+        lineHeight: '20px',
+    }
 }))
 
 export const useServiceStaffStyles = makeStyles(() => ({
     staffSelected: {
-        lineHeight: '25px',
+        color: '#000000',
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
+        alignItems:'center',
+        gap:'10px',
+        fontSize: '14px',
+        lineHeight: '20px'
     },
     staffAvatar: {
         backgroundSize: '100%',
@@ -95,8 +103,29 @@ export const useServiceStyles = makeStyles(() => ({
         margin: '15px 0px!important',
     },
     summaryWrapper: {
-        display: 'flex',
+        display: 'inline-flex',
         flexDirection: 'column',
+        padding:'0px 40px 24px',
+        '& .MuiFilledInput-root':{
+            minHeight:'initial',
+            minWidth: '160px',
+            padding:'5px 15px',
+            width:'auto',
+            backgroundColor:'#52433D',
+            '& .MuiSelect-select':{
+                paddingTop:0,
+                paddingBottom: 0,
+                backgroundColor:'#52433D',
+            },
+        },
+        '& label':{
+            fontSize: '14px',
+            color:'#ffffff',
+            transform:'translate(24px, 27px) scale(1)',
+            '&.Mui-focused':{
+                transform:'translate(24px, 27px) scale(1)',
+            }
+        }
     },
     removeServiceWrapper: {
         borderTop: '1px #e3e3e3 solid',
@@ -113,12 +142,10 @@ export const useServiceStyles = makeStyles(() => ({
         },
     },
     removeBtn: {
-        width: 125,
-        height: 38,
-        fontSize: '16px',
-        fontWeight: 500,
-        textTransform: 'capitalize',
-        marginTop: '16px',
+        position: 'absolute',
+        top:'5px',
+        left:0,
+        padding:0,
     },
     editAddOn: {
         width: 'auto',

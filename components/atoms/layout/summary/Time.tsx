@@ -18,8 +18,10 @@ export const Time = () => {
 
     if (
         !startTime ||
-        (currentFlowStep.step !== Step.PersonalInfo &&
-            currentFlowStep.step !== Step.PayAndConfirm)
+        (
+            currentFlowStep.step !== Step.ChooseDate &&
+            currentFlowStep.step !== Step.PayAndConfirm
+            )
     ) {
         return <></>
     }

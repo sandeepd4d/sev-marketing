@@ -25,7 +25,7 @@ export const WorkshopPanel = () => {
                 selectedStaffTime?.cartBookableTime,
                 cartStoreState
             )
-            await setStep(Step.PersonalInfo)
+            await setStep(Step.ConsentForm)
         } catch (e) {
             layout.setIsShowLoader(false)
             if ((e as Error).message.indexOf('CART_TIME_NOT_AVAILABLE') >= 0) {

@@ -25,6 +25,7 @@ export const ServicesList = ({ searchString }: Props) => {
                     -1
             )
             ?.map((x) => x as CartAvailableBookableItem)
+            
     const onBackHeaderClick = () => {
         layout.setHideLeftPanel(false)
         layout.setHideRightPanel(true)
@@ -39,14 +40,11 @@ export const ServicesList = ({ searchString }: Props) => {
                 />
             )}
             <Box className={classes.root}>
-                {cartAvailableBookableItemList?.map(
-                    (cartAvailableBookableItem) => (
-                        <Service
-                            key={cartAvailableBookableItem.id}
-                            bookableItem={cartAvailableBookableItem}
-                        />
-                    )
-                )}
+                {
+                    cartAvailableBookableItemList?.map((cartAvailableBookableItem) => (
+                        <Service key={cartAvailableBookableItem.id} bookableItem={cartAvailableBookableItem} />
+                    ))
+                }
             </Box>
         </>
     )

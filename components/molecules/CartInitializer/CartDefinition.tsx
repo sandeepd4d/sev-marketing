@@ -43,7 +43,7 @@ export const CartDefinition = () => {
     const {
         createCart,
         setCartCommonState,
-        getPersonalInformation,
+        // getPersonalInformation,
         forceLoadSelectedServices,
         loadSelectedStaff,
         loadBookingAnswers,
@@ -129,7 +129,7 @@ export const CartDefinition = () => {
         const urlParams = getUrlParams()
 
         const cart = await Blvd.carts.get(cartIdState)
-        setPersonalInformationState(getPersonalInformation(cart))
+        // setPersonalInformationState(getPersonalInformation(cart))
         loadBookingAnswers(cart)
         const location = (await cart.getLocation()) ?? undefined
         if (

@@ -15,6 +15,13 @@
         "hint": "#C6A992"
     },
     "custom": {
-        "lightGray": "#D9DDE5"
+        "lightGray": "#D9DDE5",
+        "colorOne":"#A69788",
+        "colorTwo":"#C8BEB8",
+        "colorThree":"#856E5C",
+        "colorFour":"#F5F34E",
+        "colorFive":"#52433D",
+        "colorSix":"#BAAEA2",
+        "colorSeven":"#918074"
     }
 }

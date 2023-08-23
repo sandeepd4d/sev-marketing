@@ -10,16 +10,16 @@ interface Props {
 export default function PaymentInfo({hasServices}: Props) {
     return (
         <Box>
-            <Typography variant="h3" sx={{ pb: 1 }}>
+            <Typography sx={{ fontWeight:600, mt:7 }}>
                 Payment info
             </Typography>
-            {hasServices && <Typography sx={{ pb: 1 }}>
+            {/* {hasServices && <Typography sx={{ pb: 1 }}>
                 Your card will not be charged until your appointment is completed.
-            </Typography>}
-            <Grid item lg={4} md={10} sm={10} xs={12}>
+            </Typography>} */}
+            <Grid item xs={12}>
                 <CardHoldersName />
             </Grid>
-            <Grid item lg={4} md={10} sm={10} xs={12}>
+            <Grid item xs={12}>
                 <CreditCardNumber />
             </Grid>
             <ExpirationCVCAndZipcode />

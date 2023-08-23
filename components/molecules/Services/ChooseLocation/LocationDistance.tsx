@@ -12,9 +12,8 @@ export const LocationDistance = ({ store }: Props) => {
         <>
             {isLocationAccessAllowed && (
                 <Typography
-                    variant="body1"
                     component="span"
-                    sx={{ pl: 1 }}
+                    sx={{ pl: 1, color:'#000000' }}
                 >{`${store?.distance} mi`}</Typography>
             )}
         </>

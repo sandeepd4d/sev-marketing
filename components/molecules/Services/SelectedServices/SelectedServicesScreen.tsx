@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import { SelectedServices } from 'components/molecules/Services/SelectedServices/SelectedServices'
 import { Box } from '@mui/material'
 import { useSelectedServicesScreenStyles } from 'components/molecules/Services/SelectedServices/useStyles'
@@ -19,6 +20,7 @@ export const SelectedServicesScreen = () => {
     const {handleServiceChange} = useSelectedServiceChange()
     const { selectedServicesStateValue } = useSelectedServices()
     const hasServices = selectedServicesStateValue.filter(x=>isCartAvailableBookableItem(x.item)).length > 0
+
     let rightPanelCaption = 'Select options'
     if (isMobile) {
         rightPanelCaption = ''
@@ -32,21 +34,19 @@ export const SelectedServicesScreen = () => {
 
     return (
         <WithLayout
-            isShowLoader={false}
-            leftPanel={
-                <Box className={classes.servicesRoot}>
-                    <SelectedServices
-                        handleServiceChange={handleServiceChange}
-                    />
-                </Box>
-            }
-            rightPanel={<RightPanel />}
-            showBottom={false}
-            rightPanelCaption={rightPanelCaption}
-            rightPanelBtnCaption="Continue"
-            leftPanelBtnCaption={'Add another'}
-            onLeftPanelBtnClick={onLeftPanelBtnClick}
-            workshopPanel={<WorkshopPanel />}
-        />
+                isShowLoader={false}
+                leftPanel={                    
+                    <Box className={classes.servicesRoot}>
+                        <SelectedServices handleServiceChange={handleServiceChange} />
+                    </Box>
+                }
+                // rightPanel={<RightPanel />}
+                showBottom={false}
+                // rightPanelCaption={rightPanelCaption}
+                rightPanelBtnCaption="Continue"
+                leftPanelBtnCaption={'Add another'}
+                onLeftPanelBtnClick={onLeftPanelBtnClick}
+                workshopPanel={<WorkshopPanel />}
+            />
     )
 }

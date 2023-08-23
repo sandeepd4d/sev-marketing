@@ -3,4 +3,5 @@ export interface PersonalInformation {
     lastName: string
     email: string
     phone: string
+    password:string
 }

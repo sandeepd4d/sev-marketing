@@ -6,19 +6,20 @@ export const stepScreen = (theme: Theme) => {
         root: (isMobile: boolean) => {
             return {
                 minHeight: '100%',
-                padding: theme.spacing(
-                    !isMobile ? 6 : 17,
-                    !isMobile ? 10 : 2,
-                    !isMobile ? 6 : 2
-                ),
+                // backgroundColor:'red',
+                padding: theme.spacing(0, 2),
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'center',
             }
         },
         blurScreen: {
-            '-webkit-filter': 'blur(20px)',
-            '-moz-filter': 'blur(20px)',
-            ' -o-filter': 'blur(20px)',
-            '-ms-filter': 'blur(20px)',
-            filter: 'blur(20px)',
+            // '-webkit-filter': 'blur(20px)',
+            // '-moz-filter': 'blur(20px)',
+            // ' -o-filter': 'blur(20px)',
+            // '-ms-filter': 'blur(20px)',
+            // filter: 'blur(20px)',
             opacity: '0.6',
             'pointer-events': 'none',
         },
@@ -26,11 +27,11 @@ export const stepScreen = (theme: Theme) => {
             'z-index': '1',
             top: '50%',
             left: 'calc(50% - 30px)',
-            '-webkit-filter': 'blur(1px)',
-            '-moz-filter': 'blur(1px)',
-            '-o-filter': 'blur(1px)',
-            '-ms-filter': 'blur(1px)',
-            filter: 'blur(1px)',
+            // '-webkit-filter': 'blur(1px)',
+            // '-moz-filter': 'blur(1px)',
+            // '-o-filter': 'blur(1px)',
+            // '-ms-filter': 'blur(1px)',
+            // filter: 'blur(1px)',
             opacity: '1',
         },
     }

@@ -21,6 +21,8 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
+        paddingLeft: '16px',
+        paddingRight: '16px',
     },
     dayTimeLoadingWrapper: {
         display: 'flex',

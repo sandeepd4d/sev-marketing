@@ -18,6 +18,7 @@ const useStyles = makeStyles(() => ({
         alignItems: 'flex-start',
         flexWrap: 'wrap',
         paddingTop: '10px',
+        width: '100%',
     },
     dayTimeBlock: {
         display: 'flex',
@@ -31,6 +32,8 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'flex-start',
         flexWrap: 'wrap',
+        gap:'10px',
+        width: '100%'
     },
 }))
 

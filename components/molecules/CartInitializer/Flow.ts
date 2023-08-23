@@ -65,17 +65,17 @@ export const getMaxAvailableStepBase = (
         return Step.PayAndConfirm
     }
 
-    if ((availableStep & personalInfoStep) === personalInfoStep) {
-        return Step.PersonalInfo
-    }
+    // if ((availableStep & personalInfoStep) === personalInfoStep) {
+    //     return Step.PersonalInfo
+    // }
 
     if ((availableStep & chooseDateStep) === chooseDateStep) {
         return Step.ChooseDate
     }
 
-    if ((availableStep & selectedServicesStep) === selectedServicesStep) {
-        return Step.SelectedServices
-    }
+    // if ((availableStep & selectedServicesStep) === selectedServicesStep) {
+    //     return Step.SelectedServices
+    // }
 
     return undefined
 }

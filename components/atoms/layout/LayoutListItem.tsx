@@ -31,7 +31,8 @@ const bottomShadow = '0 -3px 0 0'
 
 const useStyles = makeStyles((theme: Theme) => ({
     block: {
-        padding: (props: StylesProps) => (!props.isMobile ? theme.spacing(3, 2) : theme.spacing(3)),
+        // padding: (props: StylesProps) => (!props.isMobile ? theme.spacing(3, 2) : theme.spacing(3)),
+        padding: (props: StylesProps) => 0,
         cursor: (props: StylesProps) =>
             props.useDefaultCursor ? 'default' : 'pointer',
 
@@ -41,13 +42,13 @@ const useStyles = makeStyles((theme: Theme) => ({
                       theme.palette.primary.main
                   }`
                 : 'none',
-        borderBottom: (props: StylesProps) =>
-            props.hideBorderBottom
-                ? ''
-                : `1px solid ${theme.palette.custom.lightGray}`,
-        '&:last-child': {
-            marginBottom: theme.spacing(4),
-        },
+        // borderBottom: (props: StylesProps) =>
+        //     props.hideBorderBottom
+        //         ? ''
+        //         : `1px solid ${theme.palette.custom.lightGray}`,
+        // '&:last-child': {
+        //     marginBottom: theme.spacing(4),
+        // },
     },
     row: {
         display: 'flex',
@@ -79,7 +80,7 @@ export const LayoutListItem = ({
     })
     const arrowColor = selected ? colors.primary.main : 'black'
     return (
-        <Box id={id} className={classes.block} sx={sx} onClick={onClick}>
+        <Box id={id} className={`${classes.block} accordion-wrap`} sx={sx} onClick={onClick}>
             {addRightArrow && (
                 <Box className={classes.row}>
                     {children}

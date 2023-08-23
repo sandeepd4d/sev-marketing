@@ -17,21 +17,52 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
 
     selectBtnWrapper: {
-        marginLeft: (props: StylesProps) => (props.isMobile ? '0px' : 'auto'),
-        marginRight: (props: StylesProps) => (props.isMobile ? '0px' : '32px'),
+        marginLeft: (props: StylesProps) => (props.isMobile ? 'auto' : 'auto'),
+        // marginRight: (props: StylesProps) => (props.isMobile ? '0px' : '32px'),
     },
 
     selectBtn: {
-        height: 38,
-        marginTop: theme.spacing(2),
-        fontSize: '16px',
-        fontWeight: 500,
+        fontSize: '16px',   
+        lineHeight:'21px',
+        padding: '5px 18px',
+        display:'inline-block',
+        color:'#ffffff',
+        backgroundColor:'#98877C',
         textTransform: 'none',
+        '&:hover':{
+            backgroundColor:theme.palette.custom.colorFive
+        }
+    },
+    staticBtn: {
+        width: 'auto',
+        fontSize: '16px',   
+        lineHeight:'21px',
+        padding: '5px 18px',
+        display:'inline-block',
+        color:'#ffffff',
+        backgroundColor:'#98877C',
+        textTransform: 'none',
+        '&:hover':{
+            cursor:'default',
+            backgroundColor:'#98877C',
+        }
     },
 
+    selectedBtn: {
+        backgroundColor:theme.palette.custom.colorFive
+    },
+
+
+    selectedWrapper: {
+        marginLeft: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+    },
     cardItemDescBlock: {
-        paddingTop: '14px',
-        marginBottom: '20px',
+        // paddingTop: '14px',
+        // marginBottom: '20px',
+        fontSize: '14px',
+        lineHeight: '20px',
     },
 
     row: {
@@ -49,7 +80,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
 
     durationText: {
-        fontSize: '13px',
-        marginLeft: '5px',
+        color:'#000000'
+        // fontSize: '13px',
+        // marginLeft: '5px',
     },
 }))

@@ -9,10 +9,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        marginLeft: theme.spacing(-3),
-        marginRight: theme.spacing(-3),
+        // marginLeft: theme.spacing(-3),
+        // marginRight: theme.spacing(-3),
         paddingTop: theme.spacing(3),
-        borderTop: '1px dashed #C4C4C4',
+        borderTop: '1px dashed #9E9E9E',
     },
     boxWrapperCommon: {
         display: 'flex',

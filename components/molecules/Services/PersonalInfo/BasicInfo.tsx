@@ -5,9 +5,7 @@ import FirstLastName from 'components/molecules/Services/PersonalInfo/FirstLastN
 export default function BasicInfo() {
     return (
         <Box>
-            <Typography variant="h3" sx={{ pb: 1 }}>
-                Basic info
-            </Typography>
+            <Typography sx={{ fontWeight:600, mt:7 }}>Contact Info</Typography>
             <FirstLastName />
         </Box>
     )

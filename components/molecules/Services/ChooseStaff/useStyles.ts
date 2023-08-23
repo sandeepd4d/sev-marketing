@@ -9,19 +9,21 @@ export const useStaffStyles = makeStyles(() => ({
     row: {
         display: 'flex',
         flexDirection: 'row',
+        alignItems:'center'
     },
     staffTextBlock: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginLeft: '26px',
-    },
-    staffTextItem: {
-        marginTop: 'auto',
-        marginBottom: 'auto',
+        marginLeft: '16px',
     },
     staffName: {
-        fontWeight: 700,
+        color:'#000000',
         fontSize: '16px',
+    },
+    staffDescription: {
+        color: '#000000',
+        display: 'block',
+        fontSize: '14px',
+        // marginTop: '5px',
+        lineHeight: '20px'
     },
     root: {
         margin: '5px 10px 5px 0px',
@@ -34,19 +36,20 @@ export const useStaffStyles = makeStyles(() => ({
         border: '1px solid #40c4ff',
     },
     staffBoxAvatar: {
-        backgroundColor: colors.primary.main + '4C',
+        // backgroundColor: colors.primary.main + '4C',
+        backgroundColor: colors.custom.colorTwo,
         backgroundSize: '100%',
         borderRadius: '50%',
         display: 'inline-block',
-        height: '80px',
-        width: '80px',
-        lineHeight: '80px',
+        height: '40px',
+        width: '40px',
+        lineHeight: '40px',
         fontSize: '20px',
         fontWeight: 'bold',
     },
     staffBoxAvatarEmpty: {
         textAlign: 'center',
-        fontSize: '30px',
+        fontSize: '20px',
         color: '#FFFFFF',
     },
     staffDescBlock: {
@@ -126,15 +129,15 @@ export const useStaffListStyles = makeStyles(() => ({
 export const useSelectedButton = makeStyles(() => ({
     selectedWrapper: {
         marginLeft: 'auto',
-        marginRight: (props: StylesProps) => (props.isMobile ? '16px' : '32px'),
-        marginTop: '32px',
+        // marginRight: (props: StylesProps) => (props.isMobile ? '16px' : '32px'),
+        // marginTop: '32px',
         display: 'flex',
         flexDirection: 'row',
     },
     selectedTxt: {
         fontWeight: 700,
         fontSize: '14px',
-        marginLeft: '15px',
+        marginLeft: '8px',
         color: '#000000',
     },
 

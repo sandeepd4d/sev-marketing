@@ -104,7 +104,7 @@ export const useButtons = () => {
     }
 
     const onMoveBack = async () => {
-        await setStep(Step.PersonalInfo)
+        await setStep(Step.ChooseDate)
     }
 
     return {

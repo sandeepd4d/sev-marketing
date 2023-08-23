@@ -66,8 +66,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
     boxWrapperCommon: {
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'space-between',
+        flexDirection:'column',
+        padding: '24px 16px',
     },
     dashLine: {
         borderTop: '1px dashed #C4C4C4',
