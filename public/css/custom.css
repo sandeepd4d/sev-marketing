@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+
+.locbannersign, .locstatename, h6.locationcitytitle, h6.locationcitytitle span, p.locationaddress{
+    font-family: 'Montserrat-Regular' !important;
+}
+.locationbanner{
+    background-color:#C8BFB8;
+    padding-bottom: 20px;
+}
+.locbannertitle{
+    padding:20px;
+    text-align:center;
+    border:1px solid #000000;
+    font-family: 'Montserrat-Regular';
+}
+.monregular, .locbannersign{
+    font-family: 'Montserrat-Regular' !important;
+    line-height: 19.5px !important;
+    color: #000000 !important;
+    font-size: 16px !important;
+}
+.locbannerMaintitle{
+    font-size: 20px !important;
+    font-family: 'Montserrat-SemiBold' !important;
+}
+
+.locbannersign a{
+    color:#000000;
+    text-decoration-color:#000000;
+    font-family: 'Montserrat-Regular' !important;
+}
+.locstatename{
+    font-size: 20px !important; 
+    color:#000000 !important;
+}
+
+.locationicon{
+    font-size: 28px !important;
+    fill: #98877c !important;
+}
+h6.locationcitytitle{
+    font-size: 16px;
+color: #000;
+}
+h6.locationcitytitle span{
+    font-size: 10px;
+    
+}
+
+p.locationaddress{
+    font-size: 14px;
+}
+.locationdetail{
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+svg.checkicon{
+    fill:#98877c;
+    font-size: 22px;
+    float: right;
+}
+
+.css-r7mtnf{
+    padding-top: 0px !important;
+}
