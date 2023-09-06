@@ -71,7 +71,7 @@
         "@types/haversine": "^1.1.5",
         "@types/mapbox-gl": "^2.4.2",
         "@types/node": "^16.4.12",
-        "@types/react": "17.x",
+        "@types/react": "^18.2.21",
         "@types/styled-components": "5.x",
         "babel-loader": "8.x",
         "babel-plugin-styled-components": "1.x",
@@ -82,7 +82,6 @@
         "prettier": "2.x",
         "pretty-quick": "3.x",
         "query-string": "7.0.1",
-        "tsconfig-paths-webpack-plugin": "3.x",
         "typescript": "4.x",
         "webpack": "5.x"
     },

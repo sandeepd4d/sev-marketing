@@ -55,7 +55,7 @@ export const Container = ({ children }) => {
                     }
                     sx={{
                         height: isDesktopMode ? '100%' : 'auto',
-                        width: '100%',
+                        width: '550px',
                     }}
                 >
                     <Children />

@@ -6,17 +6,20 @@ import { LayoutListItem } from 'components/atoms/layout/LayoutListItem'
 import { useStyles } from 'components/atoms/layout/selectable-list-item/useStyles'
 import { SelectableListBtn } from 'components/atoms/layout/selectable-list-item/SelectableListBtn'
 import { SelectServicesBtn } from 'components/atoms/layout/selectable-list-item/SelectServicesBtn'
+import { CartAvailableBookableItem } from '@boulevard/blvd-book-sdk/lib/cart'
 
 interface Props {
     captionComponent: React.ReactNode
     priceComponent: React.ReactNode
     description?: string
-    btnName?: string
     setBookableItem?:any
+    bookableItem: CartAvailableBookableItem
     buttonComponent?: React.ReactNode
+    selectServiceBtn:any
+    selected:string
 }
 
-export const SelectableListItem = ({captionComponent, priceComponent, description, btnName, setBookableItem, buttonComponent}: Props) => {
+export const SelectableListItem = ({captionComponent, priceComponent, description,  setBookableItem, buttonComponent, bookableItem, selectServiceBtn, selected}: Props) => {
     const { isMobile } = useMobile()
     const classes = useStyles({ isMobile })
   
@@ -32,7 +35,7 @@ export const SelectableListItem = ({captionComponent, priceComponent, descriptio
                 {buttonComponent}
 
                 {!buttonComponent && (
-                    <SelectServicesBtn setBookableItem={setBookableItem} btnName={btnName} />
+                    <SelectServicesBtn selected={selected} bookableItem={bookableItem} setBookableItem={setBookableItem} selectServiceBtn={selectServiceBtn} />
                 )}
 
             </Box>

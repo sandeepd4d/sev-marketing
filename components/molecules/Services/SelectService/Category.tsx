@@ -40,6 +40,9 @@ export const Category = ({ category, isclicked, active, setBookableItem, index, 
     const selectedCartAvailableCategory = useSelectedCartAvailableCategory()
     const selected = selectedCartAvailableCategory?.id === category.id && !isMobile
     const [length, setLength] = React.useState(selectedCartAvailableCategory?.availableItems?.length);
+
+    const [selectedBtn, setSelectedBtn] = React.useState('');
+
     const onSelect = () => {
         setSelectedCartAvailableCategory(category)
         // if (isMobile) {
@@ -74,7 +77,6 @@ export const Category = ({ category, isclicked, active, setBookableItem, index, 
         onSelect();
     }
     // const reversedList = reverseSelectedServices(selectedServicesStateValue)
-
     return (
         <LayoutListItem useBottomShadow={true}>
             <Accordion className={`${accordionStyle.accordion} accordion ${clicked === index && 'active'} ${active ? "active" : ""}`} sx={{
@@ -96,9 +98,7 @@ export const Category = ({ category, isclicked, active, setBookableItem, index, 
                             <Box key={cartAvailableCategory.id}>
                             {
                                 // reversedList.length > 0 && reversedList[index] && reversedList[index].item?.name === cartAvailableCategory?.name ? 
-                                    <Service length={length} index={index} setBookableItem={setBookableItem} bookableItem={cartAvailableCategory as CartAvailableBookableItem} />
-                                    // :
-                                    // <Service length={length} index={index} setBookableItem={setBookableItem} bookableItem={cartAvailableCategory as CartAvailableBookableItem} />
+                                    <Service selectServiceBtn={setSelectedBtn} length={length} index={index} setBookableItem={setBookableItem} bookableItem={cartAvailableCategory as CartAvailableBookableItem} selected={`${selectedBtn == cartAvailableCategory?.name ? 'Selected' : 'Select'}`} />
                                 }
                             </Box>
                             )

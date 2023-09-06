@@ -57,7 +57,7 @@ export default function ChooseDateScreen() {
             showLeftBottom={true}
             showBottom={false}
             addBackArrow={isMobile}
-            leftPanelBtnCaption={'Add another'}
+            leftPanelBtnCaption={'Add another service'}
             onLeftPanelBtnClick={onLeftPanelBtnClick}
             backArrowStep={Step.SelectService}
             workshopPanel={<WorkshopPanel />}
