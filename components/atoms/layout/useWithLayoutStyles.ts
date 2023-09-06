@@ -180,6 +180,7 @@ export const useWithLayoutStyles = makeStyles((theme: Theme) => ({
         margin:'25px auto 0',
         textTransform:'uppercase',
     },
+    noBottomSpace:{marginBottom:0},
     bannerLink: {
         color:'#ffffff',
         textDecorationColor:'#ffffff'

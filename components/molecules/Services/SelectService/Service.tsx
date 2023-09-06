@@ -14,17 +14,19 @@ import { ServicePrice } from 'components/atoms/layout/service/ServicePrice'
 import { SelectableListItem } from 'components/atoms/layout/selectable-list-item/SelectableListItem'
 import { useMobile } from 'lib/utils/useMobile'
 import { useWithLayoutStyles } from 'components/atoms/layout/useWithLayoutStyles';
-import { useSelectedServices } from 'lib/state/services'
+import { useSelectedServices } from 'lib/state/services';
 
 interface Props {
     bookableItem: CartAvailableBookableItem,
     setBookableItem?:any
     length?:number|undefined
     index?:number
+    selectServiceBtn:any
+    selected:string
     // selected:string
 }
 
-export const Service = ({ bookableItem, setBookableItem, length, index }: Props) => {
+export const Service = ({ bookableItem, setBookableItem, length, index, selectServiceBtn, selected }: Props) => {
     const classes = useServiceStyles()
     const { isMobile } = useMobile()
     const accordionStyle = useWithLayoutStyles({ isMobile })
@@ -38,6 +40,10 @@ export const Service = ({ bookableItem, setBookableItem, length, index }: Props)
     const flowType = getFlowType()
     const setLastSelectedBookableItem = useSetLastSelectedBookableItem()
     const hasOptions = bookableItem.optionGroups?.length > 0
+
+    
+    // const [select, setSelect] = useState('select');
+    
     const selectClickLocationBase = async () => {
         if (cart === undefined || cartStore?.location === undefined) {
             return false
@@ -87,7 +93,6 @@ export const Service = ({ bookableItem, setBookableItem, length, index }: Props)
         setBookableItem(bookableItem)
         setSelectedItem(bookableItem)
     }
-    console.log(selectedItem, 'selectedItem')
 
     return ( 
         <Box className={`${length !== undefined && index === length-1 ? 'last-child' : ''} ${accordionStyle.dropdownListItems}`}>
@@ -99,9 +104,13 @@ export const Service = ({ bookableItem, setBookableItem, length, index }: Props)
                     classesCardItemPrice={classes.cardItemPrice}
                     />
                 }
+                selected={selected}
+                bookableItem={bookableItem}
+                selectServiceBtn={selectServiceBtn}
                 setBookableItem={setBookableItemToCart}
                 // btnName= {bookableItem?.name === selected?'Selected':'Select'}                
-                btnName= {index !== undefined && reversedList.length > 0 && reversedList[index] && reversedList[index].item?.name === bookableItem?.name ? 'Selected':'Select'}
+                // btnName= {index !== undefined && reversedList.length > 0 && reversedList[index] && reversedList[index].item?.name === bookableItem?.name ? 'Selected':'Select'}
+                // btnName= {select == bookableItem?.name ? 'selected':'select'}
                 description={bookableItem.description}
             />
         </Box>

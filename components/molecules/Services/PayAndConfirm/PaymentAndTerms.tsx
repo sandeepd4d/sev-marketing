@@ -45,14 +45,14 @@ export default function PaymentAndTerms() {
     const bookingAnswers = useBookingAnswers();
     const { setStep } = useFlowStep();
 
-    const customSetStep = async() => {
-        try {
-            await setStep(Step.BookingSuccess)
-        }
-        catch(error) {
+    // const customSetStep = async() => {
+    //     try {
+    //         await setStep(Step.BookingSuccess)
+    //     }
+    //     catch(error) {
             
-        }
-    }
+    //     }
+    // }
 
     const goBackStep = async() => {
         try {
@@ -67,7 +67,7 @@ export default function PaymentAndTerms() {
         <Box sx={{
             height:'100%',
             overflowY:'scroll',
-            paddingBottom: '160px'
+            paddingBottom: '100px'
         }}>
             <Box className={`${bannerStyle.banner} location_banner`}>
                 <Typography className={`${bannerStyle.slogan} ${bannerStyle.bannerContent}`}>
@@ -133,7 +133,7 @@ export default function PaymentAndTerms() {
                             <Button variant="contained" onClick={() => handleSubmit()} disabled={isFormSubmitting} className={bannerStyle.continueBtn}>
                                 {hasServices ? 'Book Now' : 'Pay'}
                             </Button>
-                            <Button variant="contained" className={bannerStyle.continueBtn} sx={{mt:2}} onClick={customSetStep}>Thank You</Button>
+                            {/* <Button variant="contained" className={bannerStyle.continueBtn} sx={{mt:2}} onClick={customSetStep}>Thank You</Button> */}
                         </Box>
                         {/* <BLVDLogo /> */}
                     </Box>

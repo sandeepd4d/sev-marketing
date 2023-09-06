@@ -16,7 +16,7 @@ export const SelectedTime = ({ store }: Props) => {
         <Button
             variant="text"
             sx={{
-                width: 'auto',
+                width: '18%',
                 border:`1px solid ${theme.palette.custom.colorFive}`,
                 fontSize:'14px',
                 backgroundColor:theme.palette.custom.colorFive,
